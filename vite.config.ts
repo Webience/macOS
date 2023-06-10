@@ -7,7 +7,10 @@ import webfontDownload from 'vite-plugin-webfont-dl';
 
 export default defineConfig(() => {
   return {
-    plugins: [qwikCity(), qwikVite(), tsconfigPaths(), vanillaExtractPlugin(), webfontDownload()],
+    plugins: [qwikCity({
+      //@ts-ignore
+      basePathname: "/macOS/",
+    }), qwikVite(), tsconfigPaths(), vanillaExtractPlugin(), webfontDownload()],
     preview: {
       headers: {
         "Cache-Control": "public, max-age=600",
